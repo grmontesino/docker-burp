@@ -1,4 +1,5 @@
-FROM grmontesino/burp-base
+ARG VERSION=latest
+FROM grmontesino/burp-base:${VERSION}
 
 EXPOSE 4971
 

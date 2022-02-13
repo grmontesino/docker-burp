@@ -1,4 +1,5 @@
-FROM grmontesino/burp-base
+ARG VERSION=latest
+FROM grmontesino/burp-base:${VERSION}
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
         cron \
