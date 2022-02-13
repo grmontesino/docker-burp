@@ -43,7 +43,7 @@ jobs:
 
   build_images:
     name: Build and push burp build_images to dockerhub
-    depends-on: build_base
+    needs: build_base
     runs-on: ubuntu-latest
 
     strategy:
