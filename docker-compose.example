@@ -1,0 +1,70 @@
+version: "3.5"
+
+x-global-env: &globalenv
+  TZ: "America/Sao_Paulo"
+
+x-restart: &restart
+  restart: unless-stopped
+
+services:
+
+  burp-server:
+    container_name: burp-server
+    image: grmontesino/burp-server
+    <<: *restart
+    environment:
+      <<: *globalenv
+      server_protocol: 1
+      server_listen_status: "0.0.0.0:4972"
+      server_directory: "/media/backup"
+      server_restore_client: burpui
+      clientconf_0_name: burpui
+      clientconf_1_name: localhost
+      clientconf_1_include_0: "/mnt/home"
+    expose:
+      - "4972"
+    ports:
+      - "4971:4971"
+    secrets:
+      - localhost
+      - burpui
+    volumes:
+      - "./tls/server:/etc/burp/tls"
+      - source: /media
+        target: /media
+        type: bind
+        bind:
+          propagation: rslave
+
+  burp-client:
+    container_name: burp-client
+    image: grmontesino/burp-client
+    <<: *restart
+    environment:
+      <<: *globalenv
+      client_server: burp-server
+      client_cname: localhost
+    secrets:
+      - localhost
+    volumes:
+      - "./tls/client:/etc/burp/tls"
+      - "/home:/mnt/home"
+
+  burp-ui:
+    container_name: burp-ui
+    image: grmontesino/burp-ui
+    <<: *restart
+    environment:
+      <<: *globalenv
+    ports:
+      - "5000:5000"
+    secrets:
+      - burpui
+    volumes:
+      - "./tls/ui:/etc/burp/tls"
+
+secrets:
+  localhost:
+    file: ./secrets/localhost
+  burpui:
+    file: ./secrets/burpui

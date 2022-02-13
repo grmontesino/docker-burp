@@ -1,0 +1,2 @@
+#min hour day mon dow usr command
+*/20 * * * * 	root 	/usr/sbin/burp -a t >/proc/1/fd/1 2>/proc/1/fd/2

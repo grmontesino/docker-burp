@@ -1,0 +1,8 @@
+secrets/**
+!secrets/.gitkeep
+
+tls/**
+!tls/.gitkeep
+
+docker-compose.yml
+docker-compose.yaml
