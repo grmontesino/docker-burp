@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.2.18-i2
+## 2.2.18-i2 - 2022-07-17
 
 * Jan Imhof:
   * burp-ui: Locked pip package versions
