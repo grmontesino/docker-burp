@@ -7,6 +7,8 @@
     anymore; if updating either set it or add the port to the `server`
     parameter.
 * Update burp-ui to 0.6.6
+  * Use python 3.9 from deadsnakes PPA
+
 
 ## 2.2.18-i2 - 2022-07-17
 
