@@ -8,6 +8,7 @@
     parameter.
 * Update burp-ui to 0.6.6
   * Use python 3.9 from deadsnakes PPA
+* Update CI actions versions
 
 
 ## 2.2.18-i2 - 2022-07-17
