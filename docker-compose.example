@@ -42,7 +42,7 @@ services:
     <<: *restart
     environment:
       <<: *globalenv
-      client_server: burp-server
+      client_server: burp-server:4971
       client_cname: localhost
     secrets:
       - localhost

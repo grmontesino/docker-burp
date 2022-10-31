@@ -14,7 +14,7 @@ client_ssl_cert="${client_ssl_cert:-/etc/burp/tls/ssl_cert-client.pem}"
 client_ssl_key="${client_ssl_key:-/etc/burp/tls/ssl_cert-client.key}"
 
 client_cname="${client_cname:-burpui}"
-client_server="${client_server:-burp-server}"
+client_server="${client_server:-burp-server:4971}"
 
 
 # Client configuration - for each env var started with client_, adjust burp.conf
