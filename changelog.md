@@ -6,6 +6,7 @@
   * The parameter `port` isn't set on the default configuration file
     anymore; if updating either set it or add the port to the `server`
     parameter.
+* Update burp-ui to 0.6.6
 
 ## 2.2.18-i2 - 2022-07-17
 
