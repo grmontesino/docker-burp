@@ -1,4 +1,4 @@
-FROM ubuntu:impish
+FROM ubuntu:jammy
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
 	burp \
