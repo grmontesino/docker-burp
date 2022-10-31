@@ -73,11 +73,6 @@ echo "*** Finhished building BURP server clientconf files."
 
 echo -e "\n*** Adjusting CA / ssl configuration"
 
-# Fix incorrect usage of RANDFILE
-# https://github.com/grke/burp/commit/ccc72be49fb46a1de7e19dd3e1080fa2ebe02f20#diff-6d80dc0705d7ff85615a96cb61671983926feafb404f3f4f0828d21dbc5419cb
-sed -i '/RANDFILE/d' /usr/sbin/burp_ca
-sed -i '/RANDFILE/d' /etc/burp/CA.cnf
-
 # Change default CA dir
 #change_parameter "/etc/burp/CA.cnf" "CA_DIR" "$CA_DIR"
 sed -i -E "s|^CA_DIR(.*)$|CA_DIR = $CA_DIR|" /etc/burp/CA.cnf
